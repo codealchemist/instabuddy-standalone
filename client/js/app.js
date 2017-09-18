@@ -95,17 +95,6 @@ class App {
     }, this.recordingTime)
   }
 
-  // Int32 to Int16
-  convertBuffer (buffer) {
-    var l = buffer.length;
-    var buf = new Int16Array(l)
-
-    while (l--) {
-      buf[l] = buffer[l]*0xFFFF;    //convert to 16 bit
-    }
-    return buf.buffer
-  }
-
   saveButton (button) {
     fetch(button.src).then((response) => {
       response
@@ -120,36 +109,6 @@ class App {
           const stream = this.client.createStream(meta)
           stream.write(buffer)
           stream.end()
-
-          // const data = Int16Array.from(buffer)
-
-          // this.send({
-          //   type: 'saveButton',
-          //   button,
-          //   audio: data,
-          //   channel: this.channel
-          // })
-          return
-
-
-          const audioContext = new AudioContext()
-          audioContext
-            .decodeAudioData(buffer)
-            .then((audioBuffer) => {
-              const data = audioBuffer.getChannelData(0)
-
-              const stream = this.client.createStream()
-              stream.write(data)
-              stream.end()
-
-              console.log('AUDIO DATA', data)
-              // this.send({
-              //   type: 'saveButton',
-              //   button,
-              //   audio: data,
-              //   channel: this.channel
-              // })
-            })
         })
     })
   }
@@ -159,7 +118,9 @@ class App {
     const $el = new El(`#btn-${id}`)
 
     $el.addClass('playing')
-    this.$audio.src = config.audioServer + this.audioCollection[id].src
+    let src = this.audioCollection[id].src
+    if (src.match(/^(?!blob:)/)) src = config.audioServer + src
+    this.$audio.src = src
     this.$audio.play()
 
     setTimeout(() => {
