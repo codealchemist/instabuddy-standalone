@@ -31,10 +31,8 @@
     "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
     "gulp-clean-css": "^3.8.0",
-    "gulp-cli": "^1.4.0",
     "gulp-copy": "^1.0.1",
     "gulp-if": "^2.0.2",
     "gulp-sequence": "^0.4.6",
@@ -44,6 +42,7 @@
     "standard-focus": "^1.1.2"
   },
   "dependencies": {
+    "gulp": "^3.9.1",
     "binaryjs": "^0.2.1",
     "ejs": "^2.5.7",
     "express": "^4.15.4"
