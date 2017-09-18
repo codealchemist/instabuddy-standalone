@@ -159,7 +159,7 @@ class App {
     const $el = new El(`#btn-${id}`)
 
     $el.addClass('playing')
-    this.$audio.src = this.audioCollection[id].src
+    this.$audio.src = config.audioServer + this.audioCollection[id].src
     this.$audio.play()
 
     setTimeout(() => {
