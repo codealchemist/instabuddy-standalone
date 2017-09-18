@@ -1,0 +1,48 @@
+{
+  "name": "instabuddy",
+  "version": "1.0.0",
+  "description": "Instantly create your own instant buttons!",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "standard-focus",
+    "start": "node server",
+    "mongo": "mongod -f mongo.conf"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codealchemist/instabuddy.git"
+  },
+  "keywords": [
+    "instabuddy",
+    "audio",
+    "fun",
+    "instant",
+    "button",
+    "generator"
+  ],
+  "author": "Alberto Miranda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codealchemist/instabuddy/issues"
+  },
+  "homepage": "https://github.com/codealchemist/instabuddy#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "del": "^3.0.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-clean-css": "^3.8.0",
+    "gulp-copy": "^1.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-sequence": "^0.4.6",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.2",
+    "pump": "^1.0.2",
+    "standard-focus": "^1.1.2"
+  },
+  "dependencies": {
+    "binaryjs": "^0.2.1",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4"
+  }
+}

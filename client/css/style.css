@@ -1,0 +1,123 @@
+body {
+  font: 18px arial;
+  background: black;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.btn i {
+  display: none;
+  position: absolute;
+  background: #eee;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  bottom: 20px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border: 1px solid white;
+  font-size: 10px;
+  text-align: center;
+  line-height: 21px;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn {
+  margin: 5px;
+  position: relative;
+  background: #eee;
+  color: black;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.btn:hover {
+  border: 2px solid white;
+}
+
+.btn:hover i {
+  display: block;
+}
+
+.btn p {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 20px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.add {
+  font-size: 40px;
+}
+
+.add p {
+  height: 40px;
+}
+
+.empty {
+  opacity: 0.2;
+}
+
+.btn.recording {
+  background: red;
+  color: white;
+  border: 2px solid white;
+  opacity: 1;
+}
+
+.btn.playing {
+  border: 2px solid white;
+}
+
+.btn.playing:before {
+  content: '';
+  width: 150px;
+  height: 150px;
+  border: 2px solid white;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  border: 4px solid white;
+  border-radius: 50%;
+  display: block;
+  animation-duration: 1s;
+  animation-name: ripple1;
+  animation-iteration-count: infinite;
+}
+
+.btn.playing:after {
+  content: '';
+  width: 150px;
+  height: 150px;
+  border: 2px solid white;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  border: 4px solid white;
+  border-radius: 50%;
+  display: block;
+  animation-duration: 1.5s;
+  animation-name: ripple2;
+  animation-iteration-count: infinite;
+}
