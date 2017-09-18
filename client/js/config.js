@@ -4,8 +4,8 @@ const configMap = {
     wsUrl: 'ws://localhost:4000'
   },
   'instabuddy.herokuapp.com': {
-    wsBinaryUrl: 'ws://instabuddy-binary-socket.herokuapp.com',
-    wsUrl: 'ws://instabuddy-socket.herokuapp.com'
+    wsBinaryUrl: 'wss://instabuddy-binary-socket.herokuapp.com',
+    wsUrl: 'wss://instabuddy-socket.herokuapp.com'
   }
 }
 

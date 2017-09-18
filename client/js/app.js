@@ -32,7 +32,6 @@ class App {
   }
 
   connect (callback) {
-    console.log('SOCKET URL:', config.wsUrl)
     this.ws = new WebSocket(config.wsUrl)
 
     this.ws.onopen = () => {
